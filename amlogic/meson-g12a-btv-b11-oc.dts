@@ -2905,6 +2905,12 @@
 			vmmc-supply = <0x2b>;
 			vqmmc-supply = <0x20>;
 			phandle = <0x127>;
+
+			wifi@1 {
+				reg = <0x01>;
+				compatible = "brcm,bcm4329-fmac";
+				phandle = <0x128>;
+			};
 		};
 
 		mmc@ffe05000 {
@@ -3416,6 +3422,14 @@
 		phandle = <0x2e>;
 	};
 
+	wifi32k {
+		compatible = "pwm-clock";
+		#clock-cells = <0x00>;
+		clock-frequency = <0x8000>;
+		pwms = <0x4f 0x00 0x7736 0x00>;
+		phandle = <0x2a>;
+	};
+
 	sound {
 		compatible = "amlogic,axg-sound-card";
 		model = "SEI510";
@@ -3766,6 +3780,7 @@
 		uart_B = "/soc/bus@ffd00000/serial@23000";
 		uart_A = "/soc/bus@ffd00000/serial@24000";
 		sd_emmc_a = "/soc/mmc@ffe03000";
+		brcmf = "/soc/mmc@ffe03000/wifi@1";
 		sd_emmc_b = "/soc/mmc@ffe05000";
 		sd_emmc_c = "/soc/mmc@ffe07000";
 		usb = "/soc/usb@ffe09000";
@@ -3803,5 +3818,6 @@
 		vddcpu = "/regulator-vddcpu";
 		vddio_ao1v8 = "/regulator-vddio_ao1v8";
 		sdio_pwrseq = "/sdio-pwrseq";
+		wifi32k = "/wifi32k";
 	};
 };
