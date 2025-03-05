@@ -4,8 +4,5 @@
 
 ### Amlogic
 
+* BTV B11
 * BTV B11 (overclocked)
-
-### Rockchip
-
-* in X plus (overclocked)
